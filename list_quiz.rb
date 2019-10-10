@@ -1,6 +1,7 @@
 def three_even?(list)
     even1 = false
     even2 = false
+    #3rd even was not needed
     
     list.each do |n|
         if n % 2 == 0 && even1 == true && even2 == true
@@ -12,6 +13,7 @@ def three_even?(list)
         elsif n % 2 != 0
             even1 = false
             even2 = false
+            #3rd even wasn't needed
             
         end
     end   
@@ -36,3 +38,25 @@ end
 
 puts bigger_two([1, 2], [3, 4])
 puts bigger_two([1, 7], [4, 4])
+
+def series_up(num)
+    list = [1]
+    length = num*(num + 1)/2
+    n = 1
+    reset = 3
+    (length - 1).times do
+        list.push n
+        n += 1
+        if n == reset
+            n = 1
+            reset += 1
+        end
+    end
+    
+    return list
+end
+
+print series_up(1)
+print series_up(2)
+print series_up(3)
+print series_up(4)
